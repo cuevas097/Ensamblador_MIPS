@@ -9,7 +9,7 @@ pipeline {
                 
                 sh '''
                     Cadena=$(grep -o Carlos Triangulo.asm)
-                    echo $Cadena
+                    echo ${Cadena:1:1}
                     '''
             }
         }
