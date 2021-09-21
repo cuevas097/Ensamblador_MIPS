@@ -3,7 +3,7 @@ pipeline {
     agent any
     
   environment {
-    DC_VarComprobar = "0"
+    DC_VARCOMPROBAR = "0"
   }
     stages {
      
@@ -11,8 +11,9 @@ pipeline {
             steps{
                 
                 sh '''
+                    echo ${env.DC_VARCOMPROBAR}
                     Cadena=$(grep -o Carlos Triangulo.asm)
-                    DC_VarComprobar = Cadena
+                    env.DC_VARCOMPROBAR = Cadena
                     echo $DC_VarComprobar
                     '''
             }
