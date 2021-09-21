@@ -16,7 +16,9 @@ pipeline {
                 sh '''
                     Cadena=$(grep -o Carlos Triangulo.asm)
                     echo $Cadena
+                    DC_VARCOMPROBAR = $Cadena
                     '''
+               echo "$DC_VARCOMPROBAR"
             }
         }
     }
