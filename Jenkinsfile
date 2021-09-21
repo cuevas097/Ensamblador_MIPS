@@ -5,11 +5,13 @@ pipeline {
     stages {
      
         stage('Prueba1'){
-            steps{
-                environment {
+            
+           environment {
                     DC_VARCOMPROBAR = "0"
                 }
-                echo "DC_VARCOMPROBAR = ${env.DC_VARCOMPROBAR}"
+            
+            steps {
+              echo "DC_VARCOMPROBAR = ${env.DC_VARCOMPROBAR}"
                 
                 sh '''
                     Cadena=$(grep -o Carlos Triangulo.asm)
