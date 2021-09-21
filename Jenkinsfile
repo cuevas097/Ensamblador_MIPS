@@ -2,6 +2,9 @@ pipeline {
     
     agent any
     
+  environment {
+    DC_VarComprobar = "0"
+  }
     stages {
      
         stage('Prueba1'){
@@ -9,7 +12,8 @@ pipeline {
                 
                 sh '''
                     Cadena=$(grep -o Carlos Triangulo.asm)
-                    echo ${Cadena:1:1}
+                    DC_VarComprobar = Cadena
+                    echo $DC_VarComprobar
                     '''
             }
         }
