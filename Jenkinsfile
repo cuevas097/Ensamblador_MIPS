@@ -11,7 +11,7 @@ pipeline {
             steps{
                 
                 sh '''
-                    echo ${env.DC_VARCOMPROBAR}
+                    echo env.DC_VARCOMPROBAR
                     Cadena=$(grep -o Carlos Triangulo.asm)
                     env.DC_VARCOMPROBAR = Cadena
                     echo $DC_VarComprobar
